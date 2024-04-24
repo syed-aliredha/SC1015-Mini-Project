@@ -3,7 +3,7 @@
 ## About
 This is a Mini-Project for SC1015 (Introduction to Data Science and Artificial Intelligence) which aims to create an effective and efficient music recommender system. 
 
-For a detailed walkthrough, please view the source code in order from:
+For a detailed walkthrough, please view the source code in the following order:
 
 Part 1: Genre Classification Model 
 - Our attempt at feature engineering to create genre labels for our curated playlist where song recommendations from our system are based on
@@ -15,8 +15,9 @@ Part 2: Music Popularity Model
 - Uses full_spotify_playlist_dataset.csv
 
 Part 3: Music Recommender System
-- We curated our own Spotify playlist and made API calls to fetch the metadata of each song which we compiled into our own dataset. 
-- We created Autoencoder network to reduce dimensionality of data 
+- We curated our own Spotify playlist and made API calls to fetch the metadata of each song which we compiled into our own dataset
+- We created Autoencoder networks (unweighted & weighted) to reduce dimensionality of song metadata and multiple content-based filtering systems
+- We evaluated their performance via pilot testing and survey feedback
 - Uses spotify_playlist_dataset1.csv, spotify_playlist_dataset2.csv, mapper.pkl and multinomial_logistic_regression_model.pkl
 
 
@@ -35,10 +36,21 @@ full_spotify_playlist_dataset.csv: Created by combining the two files above to f
 ## Problem Definition
 - How can companies maximize the use of machine learning to recommend quality songs efficiently?
 
+Today, many robust music recommender systems contain massive numbers of features in their feature selection. This can drastically increase computational cost and create resource bottlenecks for the system. As such, to improve the efficiency, resource management, and recommendation quality, good feature selection is paramount to any music streaming services like Spotify. 
+
+Our goal is to create an efficient and effective music recommender system via a two-pronged approach. Firstly, we created a genre classification model as part of feature engineering for our recommender system. Secondly, we will use feature selection to identify relevant features and reduce latency in our model. This is done via our Music Popularity Model (as explained in About Section)
+
 ## Models Used
 - Genre Classification Model: XGBoost Classifier, Random Forest, Multinomial Logistic Regression
 - Music Popularity Model: XGBoost Regressor and Classifier 
 - Music Recommender System: Autoencoder and K-Nearest Neighbour 
+
+## Results
+Genre Classification Model: Multinomial Logistic Regression performed the best in all classification metrics tested.
+
+Music Popularity Model: The top 5 factors for influencing song popularity are found to be music genre, explicit lyrics, release year, instrumentalness and the song artist. 
+
+Music Recommender System: The baseline model with adjusted weights based on features that we found to be important for song popularity performed the best, followed by the use of Weighted Autoencoders. 
 
 ## Conclusion
 Firstly, the use of Weighted Autoencoders can help improve training efficiency without significant performance cost when using numerical metadata.  
