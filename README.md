@@ -38,7 +38,7 @@ full_spotify_playlist_dataset.csv: Created by combining the two files above to f
 
 Today, many robust music recommender systems contain massive numbers of features in their feature selection. This can drastically increase computational cost and create resource bottlenecks for the system. As such, to improve the efficiency, resource management, and recommendation quality, good feature selection is paramount to any music streaming services like Spotify. 
 
-Our goal is to create an efficient and effective music recommender system via a two-pronged approach. Firstly, we created a genre classification model as part of feature engineering for our recommender system. Secondly, we will use feature selection to identify relevant features and reduce latency in our model. This is done via our Music Popularity Model (as explained in About Section)
+Our goal is to create an efficient and effective music recommender system via a two-pronged approach. Firstly, we created a genre classification model as part of feature engineering for our recommender system. Secondly, we will use feature selection to identify relevant features and reduce latency in our model. This is done via our Music Popularity Model (as explained in About Section).
 
 ## Models Used
 - Genre Classification Model: XGBoost Classifier, Random Forest, Multinomial Logistic Regression
